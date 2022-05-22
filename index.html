@@ -26,9 +26,15 @@
             background:#1e252f;
         }
         li{
-            list-style-position: inside;
+            list-style: none;
         }
-        h1, h2, p{
+        li img{
+            width:100%;
+        }
+        li img, li a{
+            display: block;
+        }
+        h1, h2, p, li a{
             margin-bottom: 20px;
         }
     </style>
@@ -38,7 +44,14 @@
 
         <p>If you would like to support my work and education, feel free to <a href="https://buymeacoffee.com/wcazes" target="_blank">Buy Me A Coffee</a>. Check out my <a href="https://github.com/wcazes" target="_blank">github</a> for more projects.</p></p>
         <h2>Projects</h2>
-        <ul><li><a href="./Interactive Rating Component/index.html">Interactive Rating Component</a></li></ul>
+        <ul>
+            <li>
+                <div class="details">
+                    <a href="./Interactive Rating Component/index.html">Interactive Rating Component</a>
+                    <img src="/imgs/rating.png" alt="">
+                </div>
+            </li>
+        </ul>
     </main>
     <footer class="container">
         &copy; <a href="https://williamcazes.com" target="_blank"> William Cazes</a>
