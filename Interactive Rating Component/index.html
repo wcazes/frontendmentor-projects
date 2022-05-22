@@ -32,7 +32,7 @@
                             <div class="num">{{rating.value}}</div>
                         </div>
                     </div>
-                <button class="btn" @click.prevent="onSubmit">submit</button>
+                <button :disabled="isDisabled" class="btn" @click.prevent="onSubmit">submit</button>
                 </div>
         
                 <div class="card rating-card" v-else>

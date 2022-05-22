@@ -6,6 +6,7 @@ createApp(
             return{
                 currentRating: 0,
                 submitted: false,
+                isDisabled: true,
                 ratings:[
                     {
                         value: 1,
@@ -28,9 +29,11 @@ createApp(
         methods: {
             selectRating(rating){
                 this.currentRating = rating;
+                this.isDisabled = !this.isDisabled
             },
             onSubmit(){
                 this.submitted = !this.submitted;
+                this.isDisabled = !this.isDisabled
             },
         }
     }
