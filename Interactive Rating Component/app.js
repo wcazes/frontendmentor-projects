@@ -5,7 +5,6 @@ createApp(
         data(){
             return{
                 currentRating: 0,
-                showInfo:false,
                 submitted: false,
                 ratings:[
                     {
@@ -33,9 +32,6 @@ createApp(
             onSubmit(){
                 this.submitted = !this.submitted;
             },
-            show(){
-                this.showInfo = !this.showInfo
-            }
         }
     }
 ).mount("#app")

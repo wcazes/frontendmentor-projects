@@ -9,37 +9,31 @@
 </head>
 <body>
     <div id="app" v-cloak>
-        <div class="message" :style="`${showInfo ? 'display : block' : 'display : none'}`">
-            <span class="close" @click="show">back to project</span>
-            <div class="container">
-                <h1>Hi, friend!</h1>
-                <p>I just wanted to say thank you for stopping by. If you would like to support my work and education, feel free to <a href="https://buymeacoffee.com/wcazes" target="_blank">Buy Me A Coffee</a>. Check out  <a href="https://github.com/wcazes" target="_blank">my github</a> for more projects.</p>
-            </div>
-        </div>
         <header v-show="!showInfo">
             <div class="details">
                 <h1>Interactive Rating Component</h1>
                 <p>Created by <a href="https://williamcazes.com" target="_blank">William Cazes</a> | Project from <a href="https://www.frontendmentor.io/challenges/interactive-rating-component-koxpeBUmI" target="_blank">FontendMentor.io</a></p>
+                <p><a href="../index.html">go back to projects</a></p>
             </div>
         </header>
         <main class="container">
             <Transition name="fade">
-            <div class="card" v-if="!submitted">
-                <div class="star-icon">
-                    <div class="star"><img src="./imgs/icon-star.svg"></div>
-                </div>
-                <h2>How did we do?</h2>
-                <p>Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
-                <div class="ratings">
-                    <div class="rating-number" 
-                        v-for="(rating,id) in ratings" :key="id"
-                        :class="`${currentRating === rating.value ? 'selected' : 'notSelected'}`"
-                        @click="selectRating(rating.value, id)">
-                        <div class="num">{{rating.value}}</div>
+                <div class="card" v-if="!submitted">
+                    <div class="star-icon">
+                        <div class="star"><img src="./imgs/icon-star.svg"></div>
                     </div>
+                    <h2>How did we do?</h2>
+                    <p>Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
+                    <div class="ratings">
+                        <div class="rating-number" 
+                            v-for="(rating,id) in ratings" :key="id"
+                            :class="`${currentRating === rating.value ? 'selected' : 'notSelected'}`"
+                            @click="selectRating(rating.value, id)">
+                            <div class="num">{{rating.value}}</div>
+                        </div>
+                    </div>
+                <button class="btn" @click.prevent="onSubmit">submit</button>
                 </div>
-            <button class="btn" @click.prevent="onSubmit">submit</button>
-            </div>
         
                 <div class="card rating-card" v-else>
                     <img src="./imgs/illustration-thank-you.svg" alt="">
@@ -48,12 +42,9 @@
                     
                     <p>We appreciate you taking the time to give a rating. If you ever need more support, don't hesistate to get in touch!</p>
                 </div>
+
             </Transition>
         </main>
-        <div class="read"  v-show="!showInfo && submitted" @click="show">
-                read message
-            </div>
-        </div>
     </div>
     <script src="https://unpkg.com/vue@3"></script>
     <script src="app.js"></script>

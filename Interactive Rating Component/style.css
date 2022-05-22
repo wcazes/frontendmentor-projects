@@ -37,32 +37,6 @@ p{
     position: relative;
     height:100%;
 }
-.read{
-    margin:0 auto;
-    width:100%;
-    max-width: 400px;
-    text-align: center;
-    padding: 10px;
-    background-color: var(--card-background-color);
-    border-radius: 30px;
-}
-.message{
-    display: none;
-    background: var(--header-background-color);
-    width: 100vw;
-    height: 100vh;
-    padding:30px;
-    color:var(--header-font-color)
-}
-.message .container{
-    max-width: 750px;
-}
-.message p{
-    font-size: 1em;
-    font-weight: 900;
-    line-height: 2em;
-}
-
 a, a:visited, a:hover{
     color: var(--orange);
 }
@@ -142,7 +116,7 @@ h1,h2,h3,h4,h5,img{
 .rating-number:hover{
     background: var(--orange);
 }
-.read,.close,.btn, .rating-number{
+.btn, .rating-number{
     cursor: pointer;
 }
 
