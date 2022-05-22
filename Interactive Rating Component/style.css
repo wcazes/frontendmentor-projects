@@ -58,6 +58,7 @@ header .details h1, header .details p{
     margin:5px;
 }
 .container{
+    padding:10px;
     margin:50px auto;
     width:100%;
     max-width: 400px;
