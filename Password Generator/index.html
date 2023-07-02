@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Password Generator</title>
+</head>
+<body>
+    <div class="details">
+        <p><a href="../index.html">go back to projects</a></p>
+    </div>
+    <div id="app" class="app">
+        <header>
+            <h1>Password Generator</h1>
+            <p>
+                Check the boxes to include letters, numbers, and symbols. Don't forget to adjust the length of the password! Click the button and a password will be generated.
+            </p>
+            <input type="text" name="password" id="password" placeholder="PASSWORD" :value="password">
+            
+        </header>
+
+        <main class="flex flex-col justify-center ">
+            <div class="flex flex-row space-between align-items-center mb-10">
+                <span class="label-text">LENGTH</span>
+                <span class="count">{{count}}</span>
+            </div>
+
+            <input type="range" name="characters" id="characters" min="8" :max="rangeMax" v-model="range" @input="change">
+
+            <label for="lowercase">
+                <input type="checkbox" name="lowercase" id="" checked disabled >
+                <span class="label-text">Include Lowercase Letters</span>
+            </label>
+
+            <label for="uppercase">
+                <input type="checkbox" name="uppercase" id="" checked @click="changeUpperCase">
+                <span class="label-text">Include Uppercase Letters</span>
+            </label>
+
+
+            <label for="numbers">
+                <input type="checkbox" name="numbers" id="" checked @click="changeNumbers">
+                <span class="label-text">Include Numbers</span>    
+            </label>
+
+            <label for="symbols">
+                <input type="checkbox" name="symbols" id="" checked @click="changeSymbols">    
+                <span class="label-text">Include Symbols</span>
+            </label>
+
+            <div class="strength-box flex flex-row align-self-center">
+                <div class="label-text">STRENGTH</div>
+                <div class="strength" v-for="n in maxStrength">
+                    <span class="level"></span>
+                </div>
+            </div>
+
+            <button type="button" @click="generatePassword">GENERATE</button>
+        </main>
+        <footer>WilliamCazes.com</footer>
+    </div>
+    
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
